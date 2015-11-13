@@ -1,5 +1,5 @@
 from __future__ import with_statement
-from fabric.api import *
+from fabric.api import local, execute
 from contextlib import contextmanager as _contextmanager
 from fabric.context_managers import lcd
 
@@ -32,7 +32,7 @@ def setup_tools():
     local("sudo apt-get install python-setuptools")
 
 def create_virtual():
-    local("virtualenv project")
+    local("virtualenv --no-site-packages project")
 
 def start_django_proj():
     code_dir = 'project'
