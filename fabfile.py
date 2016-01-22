@@ -44,7 +44,6 @@ def create_virtual():
     with lcd(bashrc_dir):
     	local("echo 'export WORKON_HOME=~/.virtualenvs' >> .bashrc")
 	local("echo '. /usr/local/bin/virtualenvwrapper.sh' >> .bashrc")
-    local(". ~/.bashrc")
     
 def edit_vimrc():
     vimrc_file = '..'
@@ -53,10 +52,11 @@ def edit_vimrc():
         local("sh ~/.vim_runtime/install_awesome_vimrc.sh")
 
 def messages():
-    local("  ")
-    local("echo Don't forget to being a virtualenv before starting part 2")
-    local("  ")
-    local("echo dont forget to edit vim.rc")
+    local("echo '. ~/.bashrc'")
+    local("")
+    local("echo do not forget to begin a virtualenv before starting part 2")
+    local("")
+    local("echo do not forget to edit vim.rc")
 
 
 """
