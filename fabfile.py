@@ -44,13 +44,13 @@ def create_virtual():
     with lcd(bashrc_dir):
     	local("echo 'export WORKON_HOME=~/.virtualenvs' >> .bashrc")
 	local("echo '. /usr/local/bin/virtualenvwrapper.sh' >> .bashrc")
+    local(". ~/.bashrc")
     
 def edit_vimrc():
     vimrc_file = '..'
     with lcd(vimrc_file):
         local("git clone https://github.com/amix/vimrc.git ~/.vim_runtime")
         local("sh ~/.vim_runtime/install_awesome_vimrc.sh")
-    local(". ~/.bashrc")
 
 def messages():
     local("  ")
