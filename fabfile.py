@@ -37,7 +37,7 @@ def setup_tools():
     local("sudo apt-get install python-setuptools")
 
 def pip():
-    local("sudo apt-get install python-pip python-dev build-essential ")
+    local("sudo apt-get install python-pip python-dev build-essential -y")
 
 def create_virtual():
     local("sudo pip install virtualenv virtualenvwrapper")
