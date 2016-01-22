@@ -39,7 +39,7 @@ def pip():
     local("sudo apt-get install python-pip python-dev build-essential ")
 
 def create_virtual():
-    local("pip install virtualenv virtualenvwrapper")
+    local("sudo pip install virtualenv virtualenvwrapper")
     bashrc_dir = '..'
     with lcd(bashrc_dir):
     	local("echo 'export WORKON_HOME=~/.virtualenvs' >> .bashrc")
@@ -50,10 +50,11 @@ def edit_vimrc():
     with lcd(vimrc_file):
         local("git clone https://github.com/amix/vimrc.git ~/.vim_runtime")
         local("sh ~/.vim_runtime/install_awesome_vimrc.sh")
+    local(". ~/.bashrc")
 
 def messages():
     local("  ")
-    local("echo Please begin a new terminal window and type mkvirtualenv + the virtualenvs name to begin a virtual env and then run install_1")
+    local("echo Don't forget to being a virtualenv before starting part 2")
     local("  ")
     local("echo dont forget to edit vim.rc")
 
