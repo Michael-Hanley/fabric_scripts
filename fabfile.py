@@ -6,9 +6,10 @@ from fabric.context_managers import lcd
 """
 This File is meant to be run in two parts. The first is to install the tools necessary to get a virtual environment ready. 
 
-An intermediary step is necessary in that the user needs to manually create a new terminal, enter the mkvitualenv command with the name of the virtual env inorder to create and start the virtualenv.
+An intermediary step is necessary in that the user needs to manually enter the mkvitualenv command with the
+name of the virtual env in order to create and start the virtualenv.
 
-On step two, within the virtual env we will be installing the necessary packages for our python environment.
+On step two, within the virtual env we will be installing the necessary packages for our python/django environment.
 """
 
 def install_0():
@@ -61,6 +62,9 @@ def messages():
 
 """
 Step two
+
+Packages to be install inside the virtual env.
+
 """
 
 def install_1():
