@@ -17,24 +17,26 @@ def install_0():
     execute(python)
     execute(setup_tools)
     execute(pip)
+    execute(edit_vimrc)
     execute(create_virtual)
+    execute(messages)
 
 def update():
-	local("apt-get update")
+	local("sudo apt-get update")
 
 def git():
-	local("apt-get install git")
+	local("sudo apt-get install git")
 	local("git config --global user.name 'Pasquali'")
 	local("git config --global user.email 'pasaquali@gmail.com'")
 
 def python():
-    local("apt-get install python")
+    local("sudo apt-get install python")
 
 def setup_tools():
-    local("apt-get install python-setuptools")
+    local("sudo apt-get install python-setuptools")
 
 def pip():
-    local("apt-get install python-pip python-dev build-essential ")
+    local("sudo apt-get install python-pip python-dev build-essential ")
 
 def create_virtual():
     local("pip install virtualenv virtualenvwrapper")
@@ -42,7 +44,19 @@ def create_virtual():
     with lcd(bashrc_dir):
     	local("echo 'export WORKON_HOME=~/.virtualenvs' >> .bashrc")
 	local("echo '. /usr/local/bin/virtualenvwrapper.sh' >> .bashrc")
+    
+def edit_vimrc():
+    vimrc_file = '..'
+    with lcd(vimrc_file):
+        local("git clone https://github.com/amix/vimrc.git ~/.vim_runtime")
+        local("sh ~/.vim_runtime/install_awesome_vimrc.sh")
+
+def messages():
+    local("  ")
     local("echo Please begin a new terminal window and type mkvirtualenv + the virtualenvs name to begin a virtual env and then run install_1")
+    local("  ")
+    local("echo dont forget to edit vim.rc")
+
 
 """
 Step two
